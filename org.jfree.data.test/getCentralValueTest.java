@@ -54,4 +54,11 @@ public class getCentralValueTest {
 		double expectedMedian = 1.00000015;
 		assertEquals("getCentralValue should return the median value of a given very small range", expectedMedian, tinyRange.getCentralValue());
 	}
+
+	// Test with a higher double in the start of the range then to a lower double 
+	@Test(expected = IllegalArgumentException.class)
+	public void testGetMiddleValueIntinRange() {
+		Range nullRange = new Range(5.0, 3.0);
+		nullRange.getCentralValue();
+	}
 }
